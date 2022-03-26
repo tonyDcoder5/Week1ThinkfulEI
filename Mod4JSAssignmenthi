@@ -29,7 +29,7 @@ function printablePrice(priceInCents)
 
 
 /*
-Tasked to write a function that takes in an arr of objs-[{products}],
+Tasked to write a func that takes in an arr of objs-[{products}],
 and two args {name, size} to return a specified product that matches
 args inputs 
 */
@@ -51,7 +51,7 @@ function chooseItemByNameAndSize(products, name, size)
 }
 
 /*
-Tasked to write a function that uses destructuring to take in the 
+Tasked to write a func that uses destructuring to take in the 
 {name, priceInCents} props from a sample arr of [{products}] objs, 
 and adds those values to an empty, inline declared, {cart} obj. 
 Then return {cart} in a modified data structure using {priceInCents} 
@@ -79,7 +79,7 @@ function addProductToCart({name, priceInCents}, cart = {})
 
 
 /*
-Tasked to write a function that takes in a group of objs {cart} 
+Tasked to write a func that takes in a group of objs {cart} 
 and using the accumulator pattern and the {priceInCents} prop within 
 the {cart} obj, a declared total variable set at 0 is returned with 
 the running total of each item in the [{cart}] {priceInCents} value 
@@ -99,11 +99,11 @@ function calculateTotal(cart)
 }
 
 /*
-Tasked to write a function that takes in an arg of {cart}, 
-uses the previous calculateTotal() func to store total of {cart}
+Tasked to write a func that takes in an arg of {cart}, 
+uses the helper func calculateTotal() to store total of {cart}
 (and checks if anything is in {cart} before completing code)
 then takes each {item} object within {cart} and uses needed properties
-{quantity, printablePrice(priceInCents)*converted using helper function*}
+{quantity, printablePrice(priceInCents)*converted using helper func*}
 to return a reciept string concatenated and modified using the provided 
 values `${quantity} ${item} ${printablePrice} and ${total}` 
 */
