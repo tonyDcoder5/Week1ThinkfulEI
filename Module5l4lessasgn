@@ -1,0 +1,113 @@
+/*
+  Assigned to complete a group of functions below as detailed in the instructions.
+
+  When one of the function parameters refers to a `park`, assume it is an object of the following shape:
+  {
+    name: "Acadia",
+    areaInSquareKm: 198.6,
+    location: {
+      state: "Maine"
+    }
+  }
+  
+   SAMPLE DATASET 
+   const parks = [
+  {
+    name: "Canyonlands",
+    areaInSquareKm: 1366.2,
+    location: { state: "Utah" },
+  },
+  {
+    name: "Crater Lake",
+    areaInSquareKm: 741.5,
+    location: { state: "Oregon" },
+  },
+  {
+    name: "Zion",
+    areaInSquareKm: 595.9,
+    location: { state: "Utah" },
+  },
+];
+  
+*/
+
+
+/*
+Write a function that uses the .find() method to return the object
+with {name} key that matches the name arg input, declared in function,
+within a null result variable intialized in case no park name matches input
+*/
+
+
+const findParkByName = (parks, name) =>
+{
+
+  let result = null;
+  
+  result = parks.find((park) => park.name === name);
+
+  return result;
+
+}
+
+
+/*
+Write a function that uses the .every() method to return 
+true if {areainSquareKm} prop in [{parks}] are greater than 
+provided minSize input, otherwise it returns false
+*/
+
+
+const allParksAboveCertainSize = (parks, minSize) =>
+{
+  
+  let result = parks.every((parkSize) => parkSize.areaInSquareKm > minSize);
+  return result;
+
+}
+
+
+/*
+Write a function using the .filter() and .map() methods to 
+return the {name} of all [{parks}] in dataset with a size greater 
+than or equal to the minSize input provided in the function call
+*/
+
+
+const getBigParkNames = (parks, minSize) =>
+{
+
+  let bigParks = parks.filter((parkSize) => parkSize.areaInSquareKm >= minSize); 
+
+  let result = bigParks.map((park) => park.name);
+
+  return result;
+
+}
+
+/*
+Write a function that uses the .filter() and the .some() methods 
+to return true if any instance in the [{park}] dataset has 
+a {location.state} value equal to the state input provided in function call
+AND a {areaInSquareKm} prop greater than or equal to the given minSize input
+*/
+
+
+const doesStateHaveOneBigPark = (parks, minSize, state) =>
+{
+  
+  const stateParks = parks.filter((statePark) => statePark.location.state === state);
+
+  const results = stateParks.some((parks) => parks.areaInSquareKm >= minSize);
+
+  return results;
+
+}
+
+
+module.exports = {
+  findParkByName,
+  allParksAboveCertainSize,
+  getBigParkNames,
+  doesStateHaveOneBigPark,
+};
