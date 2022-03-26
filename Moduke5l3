@@ -1,0 +1,70 @@
+/*
+A series of functions introducing the function arrow syntax as well as 
+the .forEach(){} method for various useful functionalities 
+*/
+
+
+const printNames = names => {
+  // my solution here
+  names.forEach((name) => {
+    console.log(name);
+  });
+};
+
+printNames(names);
+
+const logTreeType = trees => {
+  // my solution here
+  trees.forEach(tree => {
+    console.log(tree.type);
+  });
+}
+
+logTreeType(trees);
+
+
+
+const totalPoints = points => {
+  // my solution here
+  let result = 0;
+  
+  points.forEach(point => {
+    result += point;
+  });
+
+  console.log(result);
+}
+
+totalPoints(points);
+
+const buildSentence = words => {
+  // my solution here
+  let sentence = '';
+
+  words.forEach(word => {
+    sentence += `${word} `;
+  });
+
+  console.log(sentence);
+};
+
+buildSentence(words);
+
+const logPercentages = decimals => {
+  // my solution here
+  
+  decimals.forEach(decimal => 
+        
+    console.log(`${decimal * 100}%`));
+
+}
+
+logPercentages(decimals);
+
+module.exports = {
+  printNames,
+  logTreeType,
+  totalPoints,
+  buildSentence,
+  logPercentages,
+};
